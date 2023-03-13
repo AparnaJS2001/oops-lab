@@ -1,0 +1,44 @@
+package complex;
+import java.util.Scanner;
+class Complex{
+	int real1;
+	int img1;
+	int real2;
+	int img2;
+}
+public class complexnumber {
+	
+    
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	Complex r1=new Complex();
+	Complex i1=new Complex();
+	Complex r2=new Complex();
+	Complex i2=new Complex();
+	System.out.println("First complex number:");
+	System.out.println("Enter the first real number:");
+	r1.real1=sc.nextInt();
+	System.out.println("Enter the first imaginary number");
+	i1.img1=sc.nextInt();
+	System.out.println("Second complex number:");
+	System.out.println("Enter the second real number:");
+	r2.real2=sc.nextInt();
+	System.out.println("Enter the second imaginary number");
+	i2.img2=sc.nextInt();
+    int real,imaginary;
+    real=r1.real1+r2.real2;
+    imaginary=i1.img1+i2.img2;
+    if(imaginary<0)
+    {
+    	System.out.println("Sum of two complex numbers:" +real+ "-" +imaginary+ "i");
+    }
+    else {
+    	System.out.println("Sum of two complex numebrs:" +real+ "+" +imaginary+ "i");
+    }
+    sc.close();
+	}
+
+}
+
+
+
