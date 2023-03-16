@@ -1,0 +1,38 @@
+package sample;
+import java.util.Scanner;
+class cpu{
+int price;
+class processor{
+int cores;
+String manufacturer;
+public static class Ram{
+int memory;
+String manufacturer;
+}
+}
+}
+public class computer {
+public static void main(String[] args) {
+cpu x = new cpu();
+cpu.processor y = x.new processor();
+cpu.processor.Ram z = new cpu.processor.Ram();
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the price of the cpu ");
+x.price = in.nextInt();
+System.out.println("Enter the number of cores of the cpu ");
+y.cores = in.nextInt();
+System.out.println("Enter the manufacturer of the cpu ");
+y.manufacturer = in.next();
+System.out.println("Enter the size of the RAM ");
+z.memory = in.nextInt();
+System.out.println("Enter the manufacturer of the RAM ");
+z.manufacturer = in.next();
+System.out.println();
+System.out.println();
+System.out.println("Price of cpu:"+"$"+x.price);
+System.out.println("No.of cores:"+y.cores);
+System.out.println("Manufacturer of the cpu:"+y.manufacturer);
+System.out.println("Size of the RAM:"+z.memory);
+System.out.println("Manufacturer of the RAM:"+z.manufacturer);
+}
+}
