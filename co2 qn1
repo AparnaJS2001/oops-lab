@@ -1,0 +1,29 @@
+package sort;
+import java.util.*;
+public class stsort {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the number of strings to be inserted:");
+		int n = input.nextInt();
+		String[] array1 = new String[n];
+		System.out.println("Enter the strings:");
+		for(int i=0;i<n;i++)
+		{
+		array1[i] = input.next();
+		}
+		String[] array2 = new String[n];
+		System.arraycopy(array1, 0, array2, 0, array2.length);
+		System.out.println("Input array is:");
+		for(int j=0;j<n;j++)
+		{
+		System.out.println(array1[j]);
+		}
+		Arrays.sort(array2);
+		System.out.println("Output array is:");
+		for(int b=0;b<n;b++)
+		{
+		System.out.println(array2[b]);
+		}
+		input.close();
+}
+}
