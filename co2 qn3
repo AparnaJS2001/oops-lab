@@ -1,0 +1,66 @@
+package sample;
+import java.util.Scanner;
+public class strmanupulation {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		//upper and lower case
+	System.out.println("Enter the first string:");
+	String s1=sc.nextLine();
+	System.out.println("Enter the second string:");
+	String s2=sc.nextLine();
+	String s3=s1.toLowerCase();
+
+	String s4=s2.toUpperCase();
+    System.out.println(s3);
+
+	System.out.println(s4);
+	
+	//concatenate
+	String res=s1+""+s2;
+	System.out.println(res);
+	
+	//string length
+	System.out.println("Length of string:" +res.length());
+	
+	//substring
+	String s5=res.substring(0,6);
+	System.out.println(s5);
+	
+	//valueof() method
+	int a=10;
+	String s=String.valueOf(a);
+	System.out.println(s+10);
+	
+	//replace
+	String demo="Arts College";
+	String replaceString=demo.replace("Arts","Engineering");
+	System.out.println(replaceString);
+	
+	//trim
+	System.out.println("Enter the required string:");
+	String s6=sc.nextLine();
+	System.out.println(s6.trim());
+	
+	//start and ends with
+	System.out.println("Enter the string:");
+	String str=sc.nextLine();
+	System.out.println(str.startsWith("a"));
+	System.out.println(str.endsWith("n"));
+	
+	//charAt()
+	System.out.println("Enter the string:");
+	String str1=sc.nextLine();
+	System.out.println(str1.charAt(0));
+	System.out.println(str1.charAt(3));
+	
+   //intern
+	System.out.println("Enter the required string:");
+	String str2=sc.nextLine();
+	System.out.println(str2);
+	
+	
+	}
+
+}
