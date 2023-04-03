@@ -10,14 +10,18 @@ public class strmanupulation {
 	String s1=sc.nextLine();
 	System.out.println("Enter the second string:");
 	String s2=sc.nextLine();
-	String s3=s1.toLowerCase();
 
+	String s3=s1.toLowerCase();
+	
+   
+    System.out.println("lowercase:");
 	String s4=s2.toUpperCase();
     System.out.println(s3);
-
+    System.out.println("Uppercase:");
 	System.out.println(s4);
 	
 	//concatenate
+	System.out.println("Concatenated string:");
 	String res=s1+""+s2;
 	System.out.println(res);
 	
@@ -25,19 +29,28 @@ public class strmanupulation {
 	System.out.println("Length of string:" +res.length());
 	
 	//substring
+	System.out.println("Substring:");
 	String s5=res.substring(0,6);
 	System.out.println(s5);
 	
 	//valueof() method
 	int a=10;
 	String s=String.valueOf(a);
+	System.out.println("Value of string:");
 	System.out.println(s+10);
 	
 	//replace
-	String demo="Arts College";
-	String replaceString=demo.replace("Arts","Engineering");
-	System.out.println(replaceString);
-	
+	 Scanner scanner = new Scanner(System.in);
+     System.out.print("Enter a string: ");
+     String inputString = scanner.nextLine();
+     System.out.print("Enter the string to be replaced: ");
+     String oldString = scanner.nextLine();
+     System.out.print("Enter the replacement string: ");
+     String newString = scanner.nextLine();
+     String replacedString = inputString.replaceAll(oldString, newString);
+     System.out.println("Original string: " + inputString);
+     System.out.println("Replaced string: " + replacedString);
+
 	//trim
 	System.out.println("Enter the required string:");
 	String s6=sc.nextLine();
@@ -46,21 +59,38 @@ public class strmanupulation {
 	//start and ends with
 	System.out.println("Enter the string:");
 	String str=sc.nextLine();
+	System.out.println("String starts with the letter a:");
 	System.out.println(str.startsWith("a"));
+	System.out.println("String endss with the letter n:");
 	System.out.println(str.endsWith("n"));
 	
 	//charAt()
 	System.out.println("Enter the string:");
 	String str1=sc.nextLine();
+	System.out.println("Character at position 0:");
 	System.out.println(str1.charAt(0));
+	System.out.println("Character at position 3:");
 	System.out.println(str1.charAt(3));
 	
    //intern
 	System.out.println("Enter the required string:");
 	String str2=sc.nextLine();
+	System.out.println("Intern string:");
 	System.out.println(str2);
 	
-	
-	}
+	//split
+	   Scanner scanner1 = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+       String m = scanner1.nextLine();
 
+       System.out.print("Enter a delimiter: ");
+       String c = scanner1.nextLine();
+
+       String[] substrings = m.split(c);
+
+       for (String substring : substrings) {
+           System.out.println(substring);
+           scanner1.close();
+}
+	}
 }
