@@ -1,0 +1,67 @@
+package sample;
+import java.util.Scanner;
+public class employee {
+	private int eNo;
+    private String eName;
+    private double eSalary;
+
+    public employee(int eNo, String eName, double eSalary) {
+        this.eNo = eNo;
+        this.eName = eName;
+        this.eSalary = eSalary;
+    }
+
+    public int getENo() {
+        return eNo;
+    }
+
+    public String getEName() {
+        return eName;
+    }
+
+    public double getESalary() {
+        return eSalary;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the number of employees: ");
+        int n = input.nextInt();
+
+        employee[] employees = new employee[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter details of employee " + (i + 1) + ":");
+            System.out.print("eNo: ");
+            int eNo = input.nextInt();
+            System.out.print("eName: ");
+            String eName = input.next();
+            System.out.print("eSalary: ");
+            double eSalary = input.nextDouble();
+
+            employees[i] = new employee(eNo, eName, eSalary);
+        }
+
+        System.out.print("Enter the eNo of the employee to search: ");
+        int searchENo = input.nextInt();
+
+        boolean found = false;
+        for (employee employee : employees) {
+            if (employee.getENo() == searchENo) {
+                found = true;
+                System.out.println("Employee found");
+                System.out.println("eNo: " + employee.getENo());
+                System.out.println("eName: " + employee.getEName());
+                System.out.println("eSalary: " + employee.getESalary());
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Employee with eNo " + searchENo + " not found.");
+        }
+		input.close();
+	}
+
+}
