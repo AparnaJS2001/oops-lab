@@ -1,0 +1,83 @@
+package co3;
+import java.util.Scanner;
+//define square
+
+class Area{
+	
+	//area of square
+	 void area(int a) {
+		 
+		 int area=a*a;
+		 System.out.println("Area of square is:"+area);
+	 }
+	 
+	 //area of rectangle
+	 void area(int l,int b) {
+		 int area=l*b;
+		 System.out.printf("Area of rectangle is:"+area);
+	 }
+	 
+	 //triangle
+	 void area(double b,double h) {
+		 double area=0.5*b*h;
+		 System.out.println("Area of triangle is:"+area);
+	 }
+	 
+	 ////circle
+	 void area(double r) {
+		 double area=3.14*r*r;
+		 System.out.println("Area of circle is:"+area);
+	 }
+}
+
+public class qn1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Area obj=new Area();
+		int choice;
+	
+		do {
+			
+		System.out.println("Enter your choice:\n1.square\n 2.rectangle\n 3.triangle\n 4.circle\n");
+		
+		choice=sc.nextInt();
+		switch(choice) {
+		
+		case 1:
+			System.out.println("Enter the side:");
+			int obj1=sc.nextInt();
+			obj.area(obj1);
+			break;
+			
+		case 2:
+			System.out.println("Enter the length:");
+		    int obj2=sc.nextInt();
+		    System.out.println("Enter the breadth:");
+		    int obj3=sc.nextInt();
+		    obj.area(obj2,obj3);
+		    break;
+		    
+		case 3:
+			System.out.println("Enter the height:");
+		    double obj4=sc.nextDouble();
+		    System.out.println("Enter the breadth:");
+		    double obj5=sc.nextDouble();
+		    obj.area(obj4,obj5);
+		    break;
+		    
+		case 4:
+			System.out.println("Enter the radius:");
+		    double obj6=sc.nextDouble();
+		    obj.area(obj6);
+		    break;
+		    
+		default:
+			System.out.println("Invalid choice!");
+			break;
+		}
+		}while(choice!=0);
+
+
+}
+}
