@@ -1,0 +1,117 @@
+package co3;
+import java.util.Scanner;
+//create superclass
+
+class person{
+
+String name;
+String gender;
+String Address;
+int age;
+
+person(String name,String gen,String Address,int age){
+
+this.name=name;
+this.gender=gen;
+this.Address=Address;
+this.age=age;
+
+}
+
+}
+
+class employees extends person{
+
+int empid;
+String companyname;
+String qualification;
+int salary;
+
+employees(String name,String gen,String Address,int age,int empid,String companyname,String qualification,int salary){
+
+super(name,gen,Address,age);
+
+this.empid=empid;
+this.companyname=companyname;
+this. qualification= qualification;
+this.salary=salary;
+
+}
+
+}
+
+class Teacher extends employees{
+
+String subject;
+String dept;
+int tchrid;
+
+Teacher(String name,String gen,String Address,int age,int empid,String companyname,String qualification,int salary,String subject,String dept,int tchrid){
+
+super(name,gen,Address,age,empid,companyname,qualification,salary);
+
+this.subject=subject;
+this.dept=dept;
+this.tchrid=tchrid;
+
+}
+
+void display() {
+
+System.out.println("Employeee name:"+name);
+System.out.println("Gender is:"+gender);
+System.out.println("Address is:"+Address);
+System.out.println("Age is:"+age);
+System.out.println("Employee id:"+empid);
+System.out.println("Company is:"+companyname);
+System.out.println("Qualification is:"+qualification);
+System.out.println("Salary:"+salary);
+System.out.println("Subject is:"+subject);
+System.out.println("Department:"+dept);
+System.out.println("Tecaher id :"+tchrid);
+}
+
+}
+
+public class qn3 {
+
+public static void main(String[] args) {
+
+	System.out.println("Enter the numner of employees:");
+	Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    Teacher array[]=new Teacher[n];
+    for(int i=0;i<n;i++) {
+    	System.out.println("Enter the name");
+    	String name=sc.next();
+    	System.out.println("Enter the gender:");
+    	String gender=sc.next();
+    	System.out.println("Enter the address");
+    	String Address=sc.next();
+    	System.out.println("Enter the age");
+        int age=sc.nextInt();
+    	System.out.println("Enter the id:");
+    	int empid=sc.nextInt();
+    	System.out.println("Enter company name:");
+    	String companyname=sc.next();
+    	System.out.println("Enter the qualification");
+    	String qualification=sc.next();
+    	System.out.println("Enter salary:");
+    	int salary=sc.nextInt();
+    	System.out.println("Enter subject:");
+    	String subject=sc.next();
+    	System.out.println("Enter dept:");
+    	String dept=sc.next();
+    	System.out.println("Enter tchrid:");
+    	int tchrid=sc.nextInt();
+    	array[i]=new Teacher(name,gender,Address,age,empid,companyname,qualification,salary,subject,dept,tchrid);
+    }
+    System.out.println("Details are:");
+    for(int i=0;i<n;i++) {
+    array[i].display();
+    }
+    sc.close();
+    
+}
+
+}
