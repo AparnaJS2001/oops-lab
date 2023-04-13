@@ -1,0 +1,77 @@
+package co3;
+import java.util.Scanner;
+class Employee{
+	int Empid;
+	String Name;
+	int Salary;
+	String Address;
+	
+	Employee(int id,String Na,int Sal,String Add){
+		this.Empid=id;
+		this.Name=Na;
+		this.Salary=Sal;
+		this.Address=Add;
+		
+		
+	}
+}
+
+//create class teacher
+class Teacher extends Employee{
+	
+	String dept;
+	String subject;
+	
+	Teacher(int id,String Na,int Sal,String Add,String dept,String sub){
+	 super(id,Na,Sal,Add);
+	 this.dept=dept;
+	 this.subject=sub;
+	 
+	}
+
+	//display the inputs
+	void display() {
+	System.out.println("Employee id:"+Empid);
+	System.out.println("Employeee name:"+Name);
+	System.out.println("Salary:"+Salary);
+	System.out.println("Address is:"+Address);
+	System.out.println("Department:"+dept);
+	System.out.println("Subject:"+subject);
+}
+}
+public class qn2 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Enter the number of employees:");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		Teacher array[]=new Teacher[n];
+		
+		
+		for(int i=0;i<n;i++) {
+			System.out.println("Enter ID of employee:");
+			int Empid=sc.nextInt();
+			System.out.println("Enter Employee name :");
+			String Name=sc.next();
+			System.out.println("Enter Salary  :");
+			int Salary=sc.nextInt();
+			System.out.println("Enter the address:");
+			String Address=sc.next();
+			System.out.println("Enter Department:");
+			String dept=sc.next();
+			System.out.println("Enter Subject:");
+			String subject=sc.next();
+			array[i]=new Teacher( Empid, Name, Salary, Address , dept, subject);
+		}
+
+		System.out.println("Employee details are:");
+			for(int i=0;i<n;i++) {
+				System.out.println(+i);
+				array[i].display();
+			}
+			sc.close();
+		}
+	}
+
+
