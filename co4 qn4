@@ -1,0 +1,32 @@
+package co4;
+import java.util.Scanner;
+public class averagepos {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int sum=0;
+		int count=0;
+		
+		System.out.println("Enter the number of integers:");
+        int N=sc.nextInt();
+        
+        //enter the inputs
+        for(int i=0;i<N;i++) {
+        	System.out.println("Enter the number:");
+        	double  number=sc.nextInt();
+        	
+        	try {
+        		if(number<0) {
+        			throw new Exception("No negative numbers allowed!");	
+        		}
+        		sum+=number;
+        		count++;
+        	}catch(Exception e) {
+        		System.out.println(e);
+        	}
+        }
+        double average=sum/N;
+        System.out.println("Average of" +N+ "positive intergers is:"+average);
+	}
+
+}
