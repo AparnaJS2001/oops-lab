@@ -23,10 +23,16 @@ public class averagepos {
         		count++;
         	}catch(Exception e) {
         		System.out.println(e);
+        		i--;
         	}
         }
         double average=sum/N;
         System.out.println("Average of" +N+ "positive intergers is:"+average);
 	}
-
+class exception extends averagepos{
+	
+	public String toString() {
+		return( "No negative numbers allowed!");
+	}
+}
 }
