@@ -1,0 +1,65 @@
+package co3;
+import java.util.Scanner;
+class Publisher{
+	String name;
+	int year;
+	
+	Publisher(String name,int year){
+		this.name=name;
+		this.year=year;
+	}
+}
+class Book extends Publisher{
+	String bname;
+	String author;
+	String literature;
+	String fiction;
+	Book(String name,int year,String bname,String author,String literature,String fiction){
+		super(name,year);
+		this.bname=bname;
+		this.author=author;
+		this.literature=literature;
+		this.fiction=fiction;
+	}
+
+void display() {
+	System.out.println("Name of publisher:"+name);
+	System.out.println("Year of publication"+year);
+	System.out.println("Name of book:"+bname);
+	System.out.println("Author:"+author);
+	System.out.println("Type of literature:"+literature);
+	System.out.println("Fiction:"+fiction);
+	
+}
+}
+public class qn4 {
+
+	public static void main(String[] args) {
+		System.out.println("Enter number of books:");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+	    Book array[]=new Book[n];
+		for(int i=0;i<n;i++) {
+			System.out.println("Enter the name of publisher:");
+			String name=sc.next();
+			System.out.println("Enter the year:");
+			int year=sc.nextInt();
+			System.out.println("Enter the book name:");
+			String bname=sc.next();
+			System.out.println("Enter the author name:");
+			String author=sc.next();
+			System.out.println("Enter the literature type:");
+			String literature=sc.next();
+			System.out.println("Enter the fiction:");
+			String fiction=sc.next();
+			array[i]= new Book(name,year,bname,author,literature,fiction);
+		}
+		System.out.println("Details are:");
+		for(int i=0;i<n;i++) {
+			array[i].display();
+			
+		}sc.close();
+
+	}
+
+}
