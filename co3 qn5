@@ -1,0 +1,78 @@
+package co3;
+import java.util.Scanner;
+//define class 
+class Student{
+	String name;
+	int age;
+	String gender;
+	String subject;
+	int mark;
+	
+	Student(String name,int age,String gender,String subject,int mark){
+		this.name=name;
+		this.age=age;
+		this.gender=gender;
+		this.subject=subject;
+		this.mark=mark;
+	}
+}
+class Sports extends Student{
+	String item;
+	
+	Sports(String name,int age,String gender,String subject,int mark,String item){
+		
+		super(name,age,gender,subject,mark);
+		this.item=item;
+	}
+}
+class Result extends Sports{
+	String result;
+	
+	Result(String name,int age,String gender,String subject,int mark,String item,String result){
+	
+	super(name,age,gender,subject,mark,item);
+	this.result=result;
+}
+	void display (){
+		System.out.println("Name:"+name);
+		System.out.println("Age:"+age);
+		System.out.println("Gender:"+gender);
+		System.out.println("Subject:"+subject);
+		System.out.println("Mark:"+mark);
+		System.out.println("Item:"+item);
+		System.out.println("Result:"+result);
+	}
+	
+	}
+public class qn5 {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the number of students:");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		Result array[]=new Result[n];
+		for(int i=0;i<n;i++) {
+			System.out.println("Enter the name:");
+			String name=sc.next();
+			System.out.println("Enter the age:");
+			int age=sc.nextInt();
+			System.out.println("Enter the gender:");
+			String gender=sc.next();
+			System.out.println("Enter the subject:");
+			String subject=sc.next();
+			System.out.println("Enter the mark:");
+			int mark=sc.nextInt();
+			System.out.println("Enter the item:");
+			String item=sc.next();
+			System.out.println("Enter the result:");
+			String result=sc.next();
+			array[i]=new Result( name, age, gender, subject, mark, item, result);
+		}
+		System.out.println("Details are:");
+		for(int i=0;i<n;i++) {
+			array[i].display();
+			System.out.println();
+		}sc.close();
+	}
+
+}
