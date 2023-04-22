@@ -1,40 +1,41 @@
 package co4;
 import java.util.Scanner;
-class negativeexception extends Exception{
-	
-	public String toString() {
-		return( "No negative numbers allowed!");
-	}
+
+class NegativeNumberException extends Exception {
+
+    public NegativeNumberException() {
+        super("No negative numbers allowed!");
+    }
 }
 
-public class averagepos {
+public class qn1 {
 
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int sum=0;
-		int count=0;
-		
-		System.out.println("Enter the number of integers:");
-	    int N=sc.nextInt();
-	    
-	    //enter the inputs
-	    for(int i=0;i<N;i++) {
-	    	System.out.println("Enter the number:");
-	    	int  number=sc.nextInt();
-	    	
-	    	try {
-	    		if(number<0) {
-	    			throw new Exception();	
-	    		}
-	    		sum+=number;
-	    		count++;
-	    	}catch(Exception e) {
-	    		System.out.println(e);
-	    		i--;
-	    	}
-	    }
-	    double average=(sum/N);
-	    System.out.println("Average of" +N+ "positive intergers is:"+average);
+    public static void main(String[] args) throws NegativeNumberException {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        int count = 0;
 
-}
+        try {
+            System.out.print("Enter the number of integers: ");
+            int n = scanner.nextInt();
+
+            for (int i = 1; i <= n; i++) {
+                System.out.print("Enter the number #" + i + ": ");
+                int number = scanner.nextInt();
+                if (number < 0) {
+                    throw new NegativeNumberException();
+                }
+                sum += number;
+                count++;
+            }
+
+            double average = (double) sum / count;
+            System.out.println("The average of " + count + " positive integers is: " + average);
+        } catch (NegativeNumberException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            scanner.close();
+            System.out.println("Program completed.");
+        }
+    }
 }
